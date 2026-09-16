@@ -15,7 +15,10 @@ async function fetchDoc(id) {
 function cleanLines(text) {
   return text
     .split('\n')
-    .map(line => line.trim().replace(/^[•●▪◦*\-–—]\s*/, ''))
+    .map(line => line.trim())
+    .map(line => line.replace(/^\uFEFF/, ''))
+    .map(line => line.replace(/^\d+[.)]\s*/, ''))
+    .map(line => line.replace(/^[•●▪◦*\-–—]\s*/, ''))
     .filter(Boolean);
 }
 
@@ -40,7 +43,7 @@ const aldreiSober = section(aldreiLines, 'EDRÚ', 'DRYKKIR · 18+', 'Aldrei hef 
 const aldreiDrinks = section(aldreiLines, 'DRYKKIR · 18+', null, 'Aldrei hef ég');
 
 if (hverTengir.length < 5 || aldreiSober.length < 5 || aldreiDrinks.length < 5) {
-  throw new Error('Parsed too few game prompts; refusing to overwrite data.json.');
+  throw new Error(`Parsed too few game prompts: hver=${hverTengir.length}, aldrei-edru=${aldreiSober.length}, aldrei-18=${aldreiDrinks.length}`);
 }
 
 const data = {
