@@ -1,89 +1,18 @@
 <!doctype html>
 <html lang="is">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f4efdf">
-<title>Hver tengir? · leikjasíða</title>
-<style>
-:root{--paper:#f4efdf;--ink:#111;--red:#ef5140;--blue:#4c78ff;--green:#bfe66a;--yellow:#ffd34e;--muted:#716b61}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}body{overflow-x:hidden}.wrap{width:min(980px,100%);margin:auto;padding:14px 16px calc(36px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin:4px 0 16px}.brand{font-size:clamp(38px,8vw,76px);font-weight:1000;letter-spacing:-.075em;line-height:.84}.tools{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.iconbtn{min-width:44px;min-height:44px;padding:10px 12px;border:2px solid var(--ink);border-radius:13px;background:#fff;box-shadow:3px 3px 0 var(--ink);font-weight:950;cursor:pointer}.gamepick,.modes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}.gamepick button,.modes button,.controls button{min-height:52px;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:16px;padding:12px;font:inherit;font-weight:950;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}.gamepick button.active{background:var(--blue);color:#fff}.modes button.active{background:var(--green)}.modes .drink.active{background:var(--red);color:#fff}.stage{position:relative;margin-top:18px}.card{min-height:min(590px,62vh);background:#fff;border:3px solid var(--ink);border-radius:28px;box-shadow:9px 9px 0 var(--ink);padding:clamp(24px,5vw,52px);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.card.connect{background:#fff}.card.never{background:#fffdf7}.card.drinks{border-color:var(--red);box-shadow:9px 9px 0 var(--red)}.shape{position:absolute;border:3px solid var(--ink);pointer-events:none}.shape.one{width:68px;height:68px;border-radius:50%;background:var(--yellow);right:-18px;top:26px}.shape.two{width:50px;height:50px;background:var(--blue);left:-22px;bottom:42px;transform:rotate(18deg)}.card.drinks .shape.two{background:var(--red)}.eyebrow{font-size:12px;text-transform:uppercase;font-weight:1000;letter-spacing:.13em;position:relative;z-index:1}.fact{font-size:clamp(42px,8vw,82px);font-weight:1000;letter-spacing:-.065em;line-height:.91;margin:28px 0;max-width:15ch;position:relative;z-index:1;text-wrap:balance}.fact.long{font-size:clamp(34px,6.5vw,66px);max-width:18ch}.fact.verylong{font-size:clamp(29px,5.5vw,54px);max-width:21ch}.sub{font-weight:760;line-height:1.45;max-width:62ch;position:relative;z-index:1}.progress{margin-top:14px;height:8px;border:2px solid var(--ink);border-radius:999px;background:#fff;overflow:hidden}.bar{height:100%;width:0;background:var(--blue);transition:width .2s}.card.drinks+.progress .bar{background:var(--red)}.counterrow{display:flex;justify-content:space-between;gap:10px;margin-top:8px;font-size:12px;font-weight:900;color:var(--muted)}.controls{display:grid;grid-template-columns:1fr 1.7fr 1fr;gap:10px;margin-top:16px}.controls .next{background:var(--blue);color:#fff}.controls .shuffle{background:var(--yellow)}.help{margin-top:18px;border-top:1.5px solid #1113;padding-top:14px;color:var(--muted);font-size:12px;line-height:1.5;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.sync{font-size:11px}.gate{display:none;position:fixed;inset:0;background:#111d;z-index:99;align-items:center;justify-content:center;padding:20px}.gate.show{display:flex}.gatebox{background:var(--paper);border:3px solid var(--ink);border-radius:24px;max-width:500px;padding:26px;box-shadow:8px 8px 0 #000}.gatebox h2{font-size:38px;letter-spacing:-.05em;margin:0 0 8px}.gatebox p{line-height:1.5}.gateactions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.gateactions button{min-height:50px;border:2px solid var(--ink);border-radius:13px;background:#fff;font-weight:950;box-shadow:3px 3px 0 #111}.gateactions .yes{background:var(--red);color:#fff}.presentation .top,.presentation .gamepick,.presentation .modes,.presentation .help{display:none}.presentation .wrap{width:min(1200px,100%);padding-top:18px}.presentation .card{min-height:76vh}.presentation .fact{font-size:clamp(58px,9vw,110px);max-width:15ch}.presentation .fact.long{font-size:clamp(48px,7.5vw,86px)}.presentation .fact.verylong{font-size:clamp(40px,6vw,68px)}
-@media(max-width:600px){.top{align-items:center}.brand{font-size:42px}.tools .label{display:none}.gamepick,.modes{grid-template-columns:1fr 1fr}.gamepick button,.modes button{font-size:13px;padding:9px}.card{min-height:52vh;padding:24px 20px;border-radius:24px}.controls{position:sticky;bottom:8px;z-index:20;grid-template-columns:1fr 1fr;background:linear-gradient(180deg,transparent,var(--paper) 28%);padding-top:20px}.controls .next{grid-column:1/-1;grid-row:1}.controls button{min-height:54px}.help{display:block}.help>div+div{margin-top:6px}.gateactions{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.bar{transition:none}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffdd33" />
+  <title>Leikjakvöld</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23ffdd33' stroke='%2317130d' stroke-width='5'/%3E%3Cpath d='M32 11l5 14 15 1-12 9 4 15-12-8-12 8 4-15-12-9 15-1z' fill='%23ff4f9a' stroke='%2317130d' stroke-width='3'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <div class="brand">HVER<br>TENGIR?</div>
-    <div class="tools">
-      <button class="iconbtn" id="presentBtn" title="Skjáhamur">▣ <span class="label">SKJÁR</span></button>
-      <button class="iconbtn" id="restartBtn" title="Byrja upp á nýtt">↺ <span class="label">NÝR LEIKUR</span></button>
-    </div>
-  </header>
-
-  <div class="gamepick" aria-label="Veldu leik">
-    <button id="connectBtn" class="active">HVER TENGIR?</button>
-    <button id="neverBtn">ALDREI HEF ÉG</button>
-  </div>
-  <div class="modes" aria-label="Veldu ham">
-    <button id="soberBtn" class="active">EDRÚ</button>
-    <button id="drinkBtn" class="drink">DRYKKIR · 18+</button>
-  </div>
-
-  <main class="stage">
-    <section class="card connect" id="card" aria-live="polite">
-      <span class="shape one"></span><span class="shape two"></span>
-      <div><div class="eyebrow" id="eyebrow"></div><div class="fact" id="fact"></div></div>
-      <div><div class="sub" id="sub"></div></div>
-    </section>
-    <div class="progress" aria-hidden="true"><div class="bar" id="bar"></div></div>
-    <div class="counterrow"><span id="counter"></span><span id="modeLabel"></span></div>
-  </main>
-
-  <div class="controls">
-    <button id="prev">← TIL BAKA</button>
-    <button id="next" class="next">NÆSTA →</button>
-    <button id="shuffle" class="shuffle">↻ STOKKA</button>
-  </div>
-
-  <footer class="help">
-    <div id="small"></div>
-    <div><b>Lyklaborð:</b> → / space næsta · ← til baka · S stokka · F skjáhamur</div>
-    <div class="sync" id="sync">Hleð gagnabanka…</div>
-  </footer>
-</div>
-
-<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle"><div class="gatebox"><h2 id="gateTitle">18+ hamur</h2><p>Þessi útgáfa er aðeins fyrir 18+. Sopi má alltaf vera vatn eða óáfengur drykkur. Engin pressa og alltaf í lagi að sleppa — þetta er leikur, ekki drykkjukeppni.</p><div class="gateactions"><button id="gateNo">Halda edrú</button><button class="yes" id="gateYes">Ég er 18+ →</button></div></div></div>
-
-<script>
-let connect=["Ég mætti á Októberfest","Ég er tvítyngdur","Ég er yfir 180 cm","Ég er með tagl í hárinu","Ég er með gleraugu","Ég hef æft fótbolta","Ég er í hettupeysu","Ég á bíl","Ég er miðjubarn","Ég var í Skrekk","Ég á gæludýr","Ég er með naglalakk","Ég vinn í félagsmiðstöð","Ég æfi dans","Ég er skilnaðarbarn","Ég er einkabarn","Ég hef áður lært eitthvað annað í háskóla","Ég hef æft körfubolta","Ég elska kvikmyndir","Ég elska að föndra","Ég hef farið til annarrar heimsálfu","Ég er yfir þrítugt","Ég bý ein(n) og á íbúð","Ég hef aldrei farið erlendis","Ég kann á hljóðfæri","Ég kann táknmál","Ég á barn","Ég hef búið erlendis","Ég er í sambandi","Ég nota gleraugu eða linsur","Ég er með húðflúr","Ég elska ljósmyndun","Ég er ekki með bílpróf"];
-let neverSober=["Aldrei hef ég sofnað í tíma","Aldrei hef ég sent skilaboð á vitlausan einstakling","Aldrei hef ég logið um að vera á leiðinni","Aldrei hef ég sungið í sturtu","Aldrei hef ég horft á heila seríu á einum degi","Aldrei hef ég gleymt afmæli náins vinar","Aldrei hef ég farið í karaoke","Aldrei hef ég misst símann í klósett","Aldrei hef ég pantað mat bara fyrir eftirréttinn","Aldrei hef ég þóst skilja eitthvað sem ég skildi ekki","Aldrei hef ég grátið yfir kvikmynd","Aldrei hef ég hitt fræga manneskju","Aldrei hef ég farið í klippingu sem ég sá strax eftir","Aldrei hef ég dansað þegar enginn sá til","Aldrei hef ég verið vakandi alla nóttina","Aldrei hef ég farið á Tinder-deit","Aldrei hef ég átt barn","Aldrei hef ég farið solo til útlanda","Aldrei hef ég farið á Þjóðhátíð","Aldrei hef ég borðað morgunmat í kvöldmat","Aldrei hef ég villst í útlöndum"];
-let neverDrink=["Aldrei hef ég sent fyrrverandi skilaboð eftir miðnætti","Aldrei hef ég daðrað til að fá frían drykk","Aldrei hef ég gleymt hluta úr kvöldi","Aldrei hef ég farið í blackout","Aldrei hef ég tekið Irish exit í partýi","Aldrei hef ég dansað uppi á borði","Aldrei hef ég logið um hversu marga drykki ég fékk mér","Aldrei hef ég vaknað með mat sem ég man ekki eftir að hafa keypt","Aldrei hef ég kysst einhvern sem ég hitti sama kvöld","Aldrei hef ég sungið karaoke í partýi","Aldrei hef ég farið á djammið kvöldið fyrir mikilvægan dag","Aldrei hef ég mætt þunnur í vinnuna","Aldrei hef ég týnt jakka á djamminu","Aldrei hef ég þurft að afsaka skilaboð frá kvöldinu áður","Aldrei hef ég farið í eftirpartý hjá fólki sem ég þekkti varla","Aldrei hef ég pantað leigubíl og gleymt honum","Aldrei hef ég eytt meira en 100 þúsund á einu djammi"];
-let game=localStorage.getItem('ht-game')||'connect',mode='sober',order=[],index=0;
-const $=id=>document.getElementById(id);
-function data(){if(game==='connect')return connect;return mode==='sober'?neverSober:neverDrink}
-function fisherYates(n){const a=Array.from({length:n},(_,i)=>i);for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function shuffle(){order=fisherYates(data().length);index=0}
-function fitFact(text){$('fact').classList.remove('long','verylong');if(text.length>78)$('fact').classList.add('verylong');else if(text.length>52)$('fact').classList.add('long')}
-function render(){
-  const a=data();if(!order.length||order.length!==a.length)shuffle();const text=a[order[index]]||a[0]||'';$('fact').textContent=text;fitFact(text);
-  $('counter').textContent=`${index+1} / ${a.length}`;$('bar').style.width=`${((index+1)/Math.max(1,a.length))*100}%`;
-  $('connectBtn').classList.toggle('active',game==='connect');$('neverBtn').classList.toggle('active',game==='never');$('soberBtn').classList.toggle('active',mode==='sober');$('drinkBtn').classList.toggle('active',mode==='drinks');
-  $('card').className='card '+(game==='never'?'never':'connect')+(mode==='drinks'?' drinks':'');
-  if(game==='connect'){$('eyebrow').textContent=mode==='sober'?'STATTU UPP EF…':'STATTU UPP EF… · 18+';$('sub').textContent=mode==='sober'?'Stattu upp ef staðreyndin á við um þig.':'Þau sem tengja mega taka lítinn sopa — eða sleppa alveg.'}
-  else{$('eyebrow').textContent=mode==='sober'?'SETTU NIÐUR FINGUR EF…':'LÍTILL SOPI EF… · 18+';$('sub').textContent=mode==='sober'?'Haldið upp fingrum. Settu niður einn fingur ef staðhæfingin á við.':'Sopi má alltaf vera vatn eða óáfengur drykkur.'}
-  $('small').textContent=mode==='sober'?'Engin pressa. Alltaf má sitja hjá.':'18+ · Engin pressa og alltaf í lagi að sleppa. Þetta er leikur, ekki drykkjukeppni.';
-  $('modeLabel').textContent=(game==='connect'?'HVER TENGIR':'ALDREI HEF ÉG')+' · '+(mode==='sober'?'EDRÚ':'18+');
-  localStorage.setItem('ht-game',game)
-}
-async function loadSyncedData(){try{const res=await fetch(`data.json?v=${Date.now()}`,{cache:'no-store'});if(!res.ok)throw new Error(`HTTP ${res.status}`);const d=await res.json();if(Array.isArray(d.hverTengir)&&d.hverTengir.length)connect=d.hverTengir;if(Array.isArray(d.aldreiHefEg?.sober)&&d.aldreiHefEg.sober.length)neverSober=d.aldreiHefEg.sober;if(Array.isArray(d.aldreiHefEg?.drinks)&&d.aldreiHefEg.drinks.length)neverDrink=d.aldreiHefEg.drinks;shuffle();render();const when=d.syncedAt?new Date(d.syncedAt).toLocaleString('is-IS',{dateStyle:'short',timeStyle:'short'}):'nýlega';$('sync').textContent=`Google Docs samstillt · ${when}`}catch(err){$('sync').textContent='Nota innbyggðan gagnabanka';console.warn(err)}}
-function next(){index=(index+1)%order.length;render()}function prev(){index=(index-1+order.length)%order.length;render()}
-$('connectBtn').onclick=()=>{game='connect';shuffle();render()};$('neverBtn').onclick=()=>{game='never';shuffle();render()};$('soberBtn').onclick=()=>{mode='sober';shuffle();render()};$('drinkBtn').onclick=()=>$('gate').classList.add('show');$('gateNo').onclick=()=>$('gate').classList.remove('show');$('gateYes').onclick=()=>{mode='drinks';shuffle();$('gate').classList.remove('show');render()};$('next').onclick=next;$('prev').onclick=prev;$('shuffle').onclick=()=>{shuffle();render()};$('restartBtn').onclick=()=>{shuffle();render()};
-$('presentBtn').onclick=async()=>{document.body.classList.toggle('presentation');if(document.body.classList.contains('presentation')&&document.documentElement.requestFullscreen){try{await document.documentElement.requestFullscreen()}catch(e){}}else if(document.fullscreenElement){document.exitFullscreen()}};
-document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)document.body.classList.remove('presentation')});
-document.addEventListener('keydown',e=>{if($('gate').classList.contains('show'))return;if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}else if(e.key==='ArrowLeft'){prev()}else if(e.key.toLowerCase()==='s'){$('shuffle').click()}else if(e.key.toLowerCase()==='f'){$('presentBtn').click()}});
-shuffle();render();loadSyncedData();
-</script>
+  <main id="app"></main>
+  <script src="app.js"></script>
 </body>
 </html>

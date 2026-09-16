@@ -46,5 +46,18 @@ app.addEventListener("click",async e=>{const edit=e.target.closest("[data-edit-p
 app.addEventListener("change",async e=>{const input=e.target.closest("[data-player]");if(input){const id=input.dataset.player;input.checked?selected.add(id):selected.delete(id);saveSelected();const count=document.querySelector(".player-count");if(count)count.textContent=`${selected.size} VALIN`;const done=document.querySelector(".players-done span");if(done)done.textContent=selected.size;return}if(e.target.id==="player-photo"&&e.target.files[0]){const preview=document.querySelector("#avatar-preview"),button=document.querySelector(".photo-button span");button.textContent="✨ VINN MYND…";try{const image=await makePixelAvatar(e.target.files[0]);document.querySelector("#processed-photo").value=image;preview.src=image;preview.alt="Forskoðun á nýrri keppendamynd";document.querySelector(".preview-empty").hidden=true;button.textContent="✓ MYND TILBÚIN · VELJA AÐRA"}catch{button.textContent="MYNDIN VIRKAÐI EKKI · REYNA AFTUR"}}});
 document.addEventListener("keydown",e=>{if(state.view==="play"&&["Space","Enter","ArrowRight"].includes(e.code)){e.preventDefault();nextPrompt()}if(e.code==="Escape"&&state.view!=="home"){state.view==="play"?renderLibrary(state.mode):renderHome()}});
 window.addEventListener("popstate",routeFromHash);
+async function loadSyncedPrompts(){
+  try{
+    const response=await fetch("data.json",{cache:"no-store"});
+    if(!response.ok)throw new Error();
+    const data=await response.json();
+    if(Array.isArray(data.hverTengir)&&data.hverTengir.length){
+      games.connect.sober=data.hverTengir;
+      games.connect.drinks=data.hverTengir.map(f=>`${f} — þeir sem tengja taka sopa`);
+    }
+    if(Array.isArray(data.aldreiHefEg?.sober)&&data.aldreiHefEg.sober.length)games.never.sober=data.aldreiHefEg.sober;
+    if(Array.isArray(data.aldreiHefEg?.drinks)&&data.aldreiHefEg.drinks.length)games.never.drinks=data.aldreiHefEg.drinks;
+  }catch{console.warn("Ekki náðist að sækja nýjustu spurningarnar")}
+}
 function routeFromHash(){const[mode,game]=location.hash.replace("#","").split("/");if(["sober","drinks"].includes(mode)&&games[game]){state.mode=mode;startGame(game)}else if(["sober","drinks"].includes(mode))renderLibrary(mode);else renderHome()}
-loadRemoteContestants().finally(routeFromHash);
+Promise.allSettled([loadSyncedPrompts(),loadRemoteContestants()]).finally(routeFromHash);
